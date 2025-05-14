@@ -23,4 +23,11 @@ public class FoodController {
         foods.add(yourFood);
         return "Everything Okay";
     }
+
+    @PutMapping("/update")
+    public String updateYourFood(@RequestParam int index, @RequestBody Food yourFood) {
+        foods.remove(index);
+        foods.add(index, yourFood);
+        return "Everything Okay";
+    }
 }
