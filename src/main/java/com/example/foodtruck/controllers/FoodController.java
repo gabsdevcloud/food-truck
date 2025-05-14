@@ -1,9 +1,7 @@
 package com.example.foodtruck.controllers;
 
-
 import com.example.foodtruck.models.Food;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +26,12 @@ public class FoodController {
     public String updateYourFood(@RequestParam int index, @RequestBody Food yourFood) {
         foods.remove(index);
         foods.add(index, yourFood);
+        return "Everything Okay";
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteYourFood(@RequestParam int index) {
+        foods.remove(index);
         return "Everything Okay";
     }
 }
